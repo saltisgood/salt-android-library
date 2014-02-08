@@ -22,4 +22,4 @@ The library is meant to be used in conjunction with the excellent [HoloEverywher
 Other Stuff
 =============
 
-If you have questions about the use of the library or its components or just want to use it please don't hesitate to contact me through GitHub or []my personal website](http://www.nickstephen.com/).
+If you have questions about the use of the library or its components or just want to use it please don't hesitate to contact me through GitHub or [my personal website](http://www.nickstephen.com/).
