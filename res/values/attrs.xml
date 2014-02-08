@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- The duration of the animation to run -->
+    <attr name="anim_dur_ms" format="integer" />
+    <attr name="anim_waitDur_ms" format="integer" />
+    <attr name="anim_runOnce" format="boolean" />
+    <attr name="anim_shuffle" format="boolean" />
+    <attr name="anim_start" format="boolean" />
+    <attr name="anim_update_ms" format="integer" />
+    <attr name="pie_color" format="color|reference" />
+    <attr name="pie_orientation" format="float" />
+    <attr name="progress_maxValue" format="integer" />
+    <attr name="progress_startValue" format="integer" />
+    <attr name="textArray" format="reference" />
+
+    <declare-styleable name="PieProgressView">
+        <attr name="anim_dur_ms" />
+        <attr name="anim_runOnce" />
+        <attr name="anim_start" />
+        <attr name="anim_update_ms" />
+        <attr name="pie_color" />
+        <attr name="pie_orientation" />
+        <attr name="progress_maxValue" />
+        <attr name="progress_startValue" />
+    </declare-styleable>
+    
+    <declare-styleable name="AnimTextView">
+        <attr name="anim_dur_ms" />
+        <attr name="anim_shuffle" />
+        <attr name="anim_waitDur_ms" />
+        <attr name="anim_start" />
+        <attr name="textArray" />
+        <attr name="android:textSize" />
+        <attr name="android:textColor" />
+    </declare-styleable>
+
+</resources>
