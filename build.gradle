@@ -2,14 +2,14 @@ apply plugin: 'android-library'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':HoloEverywhere Library')
-    compile project(':HoloEverywhere Addon Preferences')
-    compile project(':HoloEverywhere Addon Slider')
+    compile project(':HoloEverywhere:library')
+    compile project(':HoloEverywhere:addons:preferences')
+    //compile project(':HoloEverywhere Addon Slider')
 }
 
 android {
     compileSdkVersion 18
-    buildToolsVersion '17.0.0'
+    buildToolsVersion '19.0.0'
 
     sourceSets {
         main {
