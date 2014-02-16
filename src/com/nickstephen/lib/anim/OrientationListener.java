@@ -200,7 +200,7 @@ public class OrientationListener extends OrientationEventListener {
 
 	/**
 	 * Resume doing orientation change events after pausing. This should only be called if you've previously
-	 * called {@link pause()} rather than {@link #disable}.
+	 * called {@link #pause()} rather than {@link #disable}.
 	 */
 	public void resume() {
 		mIsRunning = true;
