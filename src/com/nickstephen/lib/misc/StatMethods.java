@@ -6,9 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 
-import org.holoeverywhere.app.AlertDialog;
-import org.holoeverywhere.widget.Toast;
-
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +16,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.widget.Toast;
 
 import com.nickstephen.lib.http.ByteArrayOutputStreamProgress;
 import com.nickstephen.lib.http.IWriteListener;
@@ -32,7 +31,9 @@ public class StatMethods {
 	 * A char array of all possible hex values in lower case
 	 */
 	private static final char[] hexArray = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
-	
+
+    private StatMethods() {}
+
 	/**
 	 * Create and display a generic alert message popup with custom title and message
 	 * @param ctxt The context to display the popup with

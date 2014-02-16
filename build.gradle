@@ -2,8 +2,6 @@ apply plugin: 'android-library'
 
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
-    compile project(':HoloEverywhere:library')
-    compile project(':HoloEverywhere:addons:preferences')
     //compile project(':HoloEverywhere Addon Slider')
 }
 
