@@ -133,13 +133,13 @@ public class BitConverter {
 	 * @param bytes The array representation to convert from
 	 * @param index The starting index to read from (> 0)
 	 * @return The corresponding char value
-	 * @throws Exception Thrown by a null array, negative index or other out of bounds access
+	 * @throws java.lang.RuntimeException Thrown by a null array, negative index or other out of bounds access
 	 */
-	public static char toChar(byte[] bytes, int index) throws Exception {
+	public static char toChar(byte[] bytes, int index) throws RuntimeException {
 		if (bytes.length < 2) 
-			throw new Exception("Length of byte array must be at least 2");
+			throw new RuntimeException("Length of byte array must be at least 2");
 		else if (index + 2 > bytes.length)
-			throw new Exception("Byte array must be at least 2 bytes greater than the starting index");
+			throw new RuntimeException("Byte array must be at least 2 bytes greater than the starting index");
 		return (char) ((0xFF & bytes[index++]) << 8 | (0xFF & bytes[index]));
 	}
 	
@@ -169,14 +169,14 @@ public class BitConverter {
 	 * @param bytes The array representation to convert from
 	 * @param index The starting index to read from (> 0)
 	 * @return The corresponding short value
-	 * @throws Exception Thrown by a null array, negative index or other out of bounds access
+	 * @throws java.lang.RuntimeException Thrown by a null array, negative index or other out of bounds access
 	 */
-	public static short toInt16(byte[] bytes, int index) throws Exception { 
+	public static short toInt16(byte[] bytes, int index) throws RuntimeException {
 		if(bytes.length < 2) 
-			throw new Exception("The length of the byte array must be at least 2 bytes long.");
+			throw new RuntimeException("The length of the byte array must be at least 2 bytes long.");
 		else if (index + 2 > bytes.length)
-			throw new Exception("Byte array must be at least 2 bytes greater than the starting index");
-		return (short)( (0xff & bytes[index]) << 8 | (0xff & bytes[index + 1]) << 0 ); 
+			throw new RuntimeException("Byte array must be at least 2 bytes greater than the starting index");
+		return (short)( (0xff & bytes[index]) << 8 | (0xff & bytes[index + 1]) );
 	} 
 	
 	/**
@@ -187,15 +187,15 @@ public class BitConverter {
 	 * @param bytes The array representation to convert from
 	 * @param index The starting index to read from (> 0)
 	 * @return The corresponding int value
-	 * @throws Exception Thrown by a null array, negative index or other out of bounds access
+	 * @throws RuntimeException Thrown by a null array, negative index or other out of bounds access
 	 */
-	public static int toInt32(byte[] bytes, int index) throws Exception { 
+	public static int toInt32(byte[] bytes, int index) throws RuntimeException {
 		if(bytes.length < 4) 
-			throw new Exception("The length of the byte array must be at least 4 bytes long.");
+			throw new RuntimeException("The length of the byte array must be at least 4 bytes long.");
 		else if (index + 4 > bytes.length)
-			throw new Exception("Byte array must be at least 4 bytes greater than the starting index");
-		return (int)( (int)(0xff & bytes[index]) << 56 | (int)(0xff & bytes[index + 1]) << 48 | (int)(0xff & bytes[index + 2]) << 40 | 
-				(int)(0xff & bytes[index + 3]) << 32 ); 
+			throw new RuntimeException("Byte array must be at least 4 bytes greater than the starting index");
+		return (int)( (int)(0xff & bytes[index]) << 24 | (int)(0xff & bytes[index + 1]) << 16 | (int)(0xff & bytes[index + 2]) << 8 |
+				(int)(0xff & bytes[index + 3]) );
 	} 
 	
 	/**
@@ -215,7 +215,7 @@ public class BitConverter {
 			throw new Exception("Byte array must be at least 8 bytes greater than the starting index");
 		return (long)((long)(0xff & bytes[index]) << 56 | (long)(0xff & bytes[index + 1]) << 48 | (long)(0xff & bytes[index + 2]) << 40 | 
 				(long)(0xff & bytes[index + 3]) << 32 | (long)(0xff & bytes[index + 4]) << 24 | (long)(0xff & bytes[index + 5]) << 16 | 
-				(long)(0xff & bytes[index + 6]) << 8 | (long)(0xff & bytes[index + 7]) << 0 ); 
+				(long)(0xff & bytes[index + 6]) << 8 | (long)(0xff & bytes[index + 7]) );
 	} 
 	
 	/**
@@ -240,7 +240,6 @@ public class BitConverter {
 	 * Convert a byte array to its string value. Arrays shorter than 1 byte
 	 * will purposely throw an exception. Equivalent to new String(bytes);
 	 * @param bytes The array representation to convert from
-	 * @param index The starting index to read from (> 0)
 	 * @return The corresponding string value
 	 * @throws Exception Thrown by a null array or other out of bounds access
 	 */
